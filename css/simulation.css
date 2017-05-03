@@ -15,12 +15,10 @@ h6 {
     font-weight: 700;
 }
 .step-progress{
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    margin: 0px;
 }
-
-
-
 
 .bs-wizard {margin-top: 40px;}
 

@@ -23,13 +23,13 @@
                 <a class="navbar-brand topnav" href="#">DSLR Decision Support System</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="#contact">Contact</a>
                     </li>
                     <li>
-                        <a href="#login">Login</a>
+                        <a href="/pages/login.php">Login</a>
                     </li>
                 </ul>
             </div>
@@ -38,7 +38,7 @@
         <!-- /.container -->
     </nav>
 
-    <!-- Header -->
+    <!-- Body -->
     <a name="about"></a>
     <div class="intro-header">
         <div class="container">
@@ -59,14 +59,14 @@
         <!-- /.container -->
 
     </div>
-    <!-- /.intro-header -->
+    <!-- /.intro-body -->
+    <!-- body -->
 
-     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="copyright text-muted small">Copyright &copy;  2017. All Rights Reserved</p>
+                    <p class="copyright text-muted small">Copyright &copy;  2017. Stillmen Vallian dkk</p>
                 </div>
             </div>
         </div>
