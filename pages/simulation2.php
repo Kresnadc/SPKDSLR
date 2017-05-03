@@ -3,7 +3,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET")
 {
   if(isset($_GET['merk']))
   {
-   
+    $merk = $_GET['merk'];
   }else{
      header ('Location:simulation.php');
   }
@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET")
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+  <nav class="navbar navbar-inverse navbar-fixed-top topnav" role="navigation">
     <div class="container topnav">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -77,7 +77,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET")
     </div>
     <hr>
 
-    <div class="">
+    <div class="container">
       <form action="simulation3.php" method="get">
        <!--
        Harga
@@ -185,11 +185,12 @@ if($_SERVER['REQUEST_METHOD'] == "GET")
             <option value="10">10</option>
           </select>
         </div>
+        <input type="hidden" name="merk" value="<?php echo $merk;?>">
         <p>Total Nilai Bobot : <span id="total-bobot">0</span></p>
        
         <div class="form-group text-right">
-          <button type="button" class="btn btn-default" onclick="document.location.href = 'simulation.php';">Back</button>
-          <input type="submit" class="btn btn-default" id="sim2-submit" disabled>
+          <button type="button" class="btn btn-success" onclick="document.location.href = 'simulation.php';">Back</button>
+          <input type="submit" class="btn btn-success" id="sim2-submit" disabled>
           <br>
           <p><span id="warning" style="color:red;"></span></p>
         </div>

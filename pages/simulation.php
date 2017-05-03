@@ -6,11 +6,11 @@
 	<link rel="stylesheet" href="../css/bootstrap.css">
   <link rel="stylesheet" href="../css/simulation.css">
   <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="../js/script.js"></script>
+  <script type="text/javascript" src="../js/simulation.js"></script>
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+  <nav class="navbar navbar-inverse navbar-fixed-top topnav" role="navigation">
     <div class="container topnav">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -72,23 +72,22 @@
       <form action="simulation2.php" method="get">
         <p>Pilih salah satu merk di bawah ini :</p>
         <div class="radio">
-          <img src="../img/Canon_logo.png" class="img-responsive center-block" alt="Canon Logo" width="200">
+          <img src="../img/Canon_logo.png" class="img-responsive center-block" alt="Canon Logo" width="200" id="img-canon">
           <label>
-            <input type="radio" name="merk" value="canon" required>Canon
+            <input id="rad-canon" type="radio" name="merk" value="canon" required>Canon
           </label>
         </div>
         <div class="radio">
-          <img src="../img/Nikon_2003.png" class="img-responsive center-block" alt="Nikon Logo" width="150">
+          <img src="../img/Nikon_2003.png" class="img-responsive center-block" alt="Nikon Logo" width="150" id="img-nikon">
           <label>
-            <input type="radio" name="merk" value="nikon" required>Nikon
+            <input id="rad-nikon" type="radio" name="merk" value="nikon" required>Nikon
           </label>
         </div>
         <div class="form-group">
-          <input type="submit" class="btn btn-default">
+          <input type="submit" class="btn btn-success">
         </div>
       </form>    
-    </div>
-        
+    </div>   
   </div>
 </body>
 </html>
