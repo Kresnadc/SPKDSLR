@@ -38,46 +38,55 @@
     <!-- /.container -->
   </nav>
 
-  <!-- Progress Bar -->
-  <div class="step-progress" >
-    <div class="container">
+  <div class="container">
+    <!-- Progress Bar -->
+    <div class="step-progress" >
       <div class="row bs-wizard" style="border-bottom:0;">
 
-      <div class="col-xs-3 bs-wizard-step active">
+        <div class="col-xs-4 bs-wizard-step active">
           <div class="text-center bs-wizard-stepnum">Step 1</div>
           <div class="progress"><div class="progress-bar"></div></div>
           <a href="#" class="bs-wizard-dot"></a>
-          <div class="bs-wizard-info text-center">step1</div>
+          <div class="bs-wizard-info text-center">Pilih merk yang anda inginkan</div>
         </div>
 
-        <div class="col-xs-3 bs-wizard-step disabled"><!-- complete -->
+        <div class="col-xs-4 bs-wizard-step disabled"><!-- complete -->
           <div class="text-center bs-wizard-stepnum">Step 2</div>
           <div class="progress"><div class="progress-bar"></div></div>
           <a href="#" class="bs-wizard-dot"></a>
-          <div class="bs-wizard-info text-center">step2</div>
+          <div class="bs-wizard-info text-center">Pilih bobot untuk setiap kriteria kamera yang anda inginkan</div>
         </div>
 
-        <div class="col-xs-3 bs-wizard-step disabled"><!-- complete -->
+        <div class="col-xs-4 bs-wizard-step disabled"><!-- complete -->
           <div class="text-center bs-wizard-stepnum">Step 3</div>
           <div class="progress"><div class="progress-bar"></div></div>
           <a href="#" class="bs-wizard-dot"></a>
-          <div class="bs-wizard-info text-center">step3</div>
-        </div>
-
-        <div class="col-xs-3 bs-wizard-step disabled"><!-- active -->
-          <div class="text-center bs-wizard-stepnum">Step 4</div>
-          <div class="progress"><div class="progress-bar"></div></div>
-          <a href="#" class="bs-wizard-dot"></a>
-          <div class="bs-wizard-info text-center">step4</div>
+          <div class="bs-wizard-info text-center">Selesai</div>
         </div>
       </div>
     </div>
-  </div>
-  <hr>
-  <div class="container">
     
+    <hr>
+    
+    <div class="text-center">
+      <form action="simulation2.php" method="get">
+        <p>Pilih salah satu merk di bawah ini :</p>
+        <div class="radio">
+          <label>
+            <input type="radio" name="merk" value="canon" required>Canon
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="merk" value="nikon">Nikon
+          </label>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-default">
+        </div>
+      </form>    
+    </div>
+        
   </div>
-</div>
-
 </body>
 </html>
