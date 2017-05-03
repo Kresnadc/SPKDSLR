@@ -47,14 +47,14 @@
           <div class="text-center bs-wizard-stepnum">Step 1</div>
           <div class="progress"><div class="progress-bar"></div></div>
           <a href="#" class="bs-wizard-dot"></a>
-          <div class="bs-wizard-info text-center">Pilih merk yang anda inginkan</div>
+          <div class="bs-wizard-info text-center">Pilih Merk Kamera</div>
         </div>
 
         <div class="col-xs-4 bs-wizard-step disabled"><!-- complete -->
           <div class="text-center bs-wizard-stepnum">Step 2</div>
           <div class="progress"><div class="progress-bar"></div></div>
           <a href="#" class="bs-wizard-dot"></a>
-          <div class="bs-wizard-info text-center">Pilih bobot untuk setiap kriteria kamera yang anda inginkan</div>
+          <div class="bs-wizard-info text-center">Pilih Bobot Kriteria</div>
         </div>
 
         <div class="col-xs-4 bs-wizard-step disabled"><!-- complete -->
@@ -72,13 +72,15 @@
       <form action="simulation2.php" method="get">
         <p>Pilih salah satu merk di bawah ini :</p>
         <div class="radio">
+          <img src="../img/Canon_logo.png" class="img-responsive center-block" alt="Canon Logo" width="200">
           <label>
             <input type="radio" name="merk" value="canon" required>Canon
           </label>
         </div>
         <div class="radio">
+          <img src="../img/Nikon_2003.png" class="img-responsive center-block" alt="Nikon Logo" width="150">
           <label>
-            <input type="radio" name="merk" value="nikon">Nikon
+            <input type="radio" name="merk" value="nikon" required>Nikon
           </label>
         </div>
         <div class="form-group">
