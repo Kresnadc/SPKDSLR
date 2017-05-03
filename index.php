@@ -54,10 +54,8 @@
                     </div>
                 </div>
             </div>
-
         </div>
         <!-- /.container -->
-
     </div>
     <!-- /.intro-body -->
     <!-- body -->
