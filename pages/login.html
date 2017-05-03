@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/login.css">
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+	<!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav" href="../">DSLR Decision Support System</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div>
+        <div class="login">
+        <form action="javascript:loginButton()" >
+            <h1>Login (Admin)</h1>
+            <input id="username" type="text" name="u" placeholder="Username" required="required" />
+            <input id="password" type="password" name="p" placeholder="Password" required="required" />
+            <input type="submit" class="btn btn-primary btn-block btn-large" value="Login">
+        </form>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript">
+	function loginButton(){
+		var username= document.getElementById("username").value;
+		var password= document.getElementById("password").value;
+		if (username=="admin" && password=="admin") {
+			window.location.href = "adminPage.php";
+		}
+		else{
+			alert("Username atau password salah!")
+		}
+	}
+</script>
+</html>

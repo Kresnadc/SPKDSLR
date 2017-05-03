@@ -29,7 +29,7 @@
                         <a href="#contact">Contact</a>
                     </li>
                     <li>
-                        <a href="/pages/login.php">Login</a>
+                        <a href="/pages/login.html">Login</a>
                     </li>
                 </ul>
             </div>
