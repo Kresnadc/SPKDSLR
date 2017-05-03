@@ -1,3 +1,14 @@
+<?php
+if($_SERVER['REQUEST_METHOD'] == "GET")
+{
+  if(isset($_GET['merk']))
+  {
+   
+  }else{
+     header ('Location:simulation.php');
+  }
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
