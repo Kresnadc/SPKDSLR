@@ -1,13 +1,33 @@
 <?php
-if($_SERVER['REQUEST_METHOD'] == "GET")
+$mysqli = new mysqli("localhost","root","","spkdslr");
+if($mysqli->connect_errno)
 {
-  if(isset($_GET['merk']))
-  {
-    $merk = $_GET['merk'];
-  }else{
-     header ('Location:simulation.php');
-  }
+	echo "Failed to connect to MySQL: (" .
+ $mysqli->connect_errno.") ".$myslqi->connect_error;
 }
+session_start();
+if($_SERVER['REQUEST_METHOD'] == "POST")
+{
+  if(isset($_POST['merk']))
+  {
+    $selectedmerk = "";
+    foreach($_POST['merk'] as $merk){
+      $selectedmerk.=$merk.",";
+    }
+    $selectedmerk=rtrim($selectedmerk,", ");
+    $arrayMerk = explode(',', $selectedmerk);
+    if(sizeof($arrayMerk)==1)
+    {
+      $_SESSION['merk']="'".$arrayMerk[0]."'";
+    }
+    else{
+      $_SESSION['merk']="'".$arrayMerk[0]."' OR merk='".$arrayMerk[1]."'";
+    }
+    echo $_SESSION['merk'];
+  }
+
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,7 +41,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET")
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="navbar navbar-inverse navbar-fixed-top topnav" role="navigation">
+  <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
     <div class="container topnav">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -53,7 +73,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET")
   <div class="container">
     <div class="step-progress" >
       <div class="row bs-wizard" style="border-bottom:0;">
-      <div class="col-xs-4 bs-wizard-step complete">
+        <div class="col-xs-4 bs-wizard-step complete">
           <div class="text-center bs-wizard-stepnum">Step 1</div>
           <div class="progress"><div class="progress-bar"></div></div>
           <a href="#" class="bs-wizard-dot"></a>
@@ -77,8 +97,8 @@ if($_SERVER['REQUEST_METHOD'] == "GET")
     </div>
     <hr>
 
-    <div class="container">
-      <form action="simulation3.php" method="get">
+    <div class="">
+      <form action="simulation3.php" method="post">
        <!--
        Harga
        Jenis Sensor
@@ -86,116 +106,99 @@ if($_SERVER['REQUEST_METHOD'] == "GET")
        Resolusi Foto
        Resolusi Kamera
        Fitur
-       -->
-        <h3 class="text-center">Pilih bobot kriteria kamera DSLR sesuai keinginan anda</h5>
-        <p class="bg-warning small">Note : Nilai total bobot kriteria harus 10!</p>
-        <div class="form-group">
-          <label for="harga">Harga</label>
-          <select class="form-control" name="bobotharga" id="harga">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="sensor">Jenis Sensor</label>
-          <select class="form-control" name="bobotsensor" id="sensor">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="iso">ISO Maksimum</label>
-          <select class="form-control" name="bobotiso" id="iso">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="resfoto">Resolusi Foto Maksimum</label>
-          <select class="form-control" name="bobotresfoto" id="resfoto">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="resvideo">Resolusi Video Maksimum</label>
-          <select class="form-control" name="bobotresvideo" id="resvideo">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="fitur">Fitur Kamera</label>
-          <select class="form-control" name="bobotfitur" id="fitur">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
-        </div>
-        <input type="hidden" name="merk" value="<?php echo $merk;?>">
-        <p>Total Nilai Bobot : <span id="total-bobot">0</span></p>
-       
-        <div class="form-group text-right">
-          <button type="button" class="btn btn-success" onclick="document.location.href = 'simulation.php';">Back</button>
-          <input type="submit" class="btn btn-success" id="sim2-submit" disabled>
-          <br>
-          <p><span id="warning" style="color:red;"></span></p>
-        </div>
-      </form>   
-    </div>
+     -->
+     <h3 class="text-center">Pilih bobot kriteria kamera DSLR sesuai keinginan anda</h5>
+      <p class="bg-warning small">Note : Nilai total bobot kriteria harus 10!</p>
+      <div class="form-group">
+        <label for="harga">Harga</label>
+        <select class="form-control" name="bobotharga" id="harga">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="sensor">Jenis Sensor</label>
+        <select class="form-control" name="bobotsensor" id="sensor">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="iso">ISO Maksimum</label>
+        <select class="form-control" name="bobotiso" id="iso">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="resfoto">Resolusi Maksimum</label>
+        <select class="form-control" name="bobotres" id="resfoto">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="fitur">Fitur Kamera</label>
+        <select class="form-control" name="bobotfitur" id="fitur">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+      <p>Total Nilai Bobot : <span id="total-bobot">0</span></p>
+
+      <div class="form-group text-right">
+        <button type="button" class="btn btn-default" onclick="document.location.href = 'simulation.php';">Back</button>
+        <input type="submit" class="btn btn-default" id="sim2-submit" disabled>
+        <br>
+        <p><span id="warning" style="color:red;"></span></p>
+      </div>
+    </form>
   </div>
+</div>
 </body>
 </html>

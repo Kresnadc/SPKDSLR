@@ -10,7 +10,7 @@
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="navbar navbar-inverse navbar-fixed-top topnav" role="navigation">
+  <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
     <div class="container topnav">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -65,9 +65,9 @@
         </div>
       </div>
     </div>
-    
+
     <hr>
-    
+
     <div class="text-center">
       <form action="simulation2.php" method="get">
         <p>Pilih salah satu merk di bawah ini :</p>
