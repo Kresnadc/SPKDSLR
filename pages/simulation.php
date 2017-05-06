@@ -69,25 +69,26 @@
     <hr>
 
     <div class="text-center">
-      <form action="simulation2.php" method="get">
-        <p>Pilih salah satu merk di bawah ini :</p>
+      <form action="simulation2.php" method="post">
+        <p>Pilih merk yang Anda inginkan :</p>
         <div class="radio">
-          <img src="../img/Canon_logo.png" class="img-responsive center-block" alt="Canon Logo" width="200" id="img-canon">
+          <img src="../img/Canon_logo.png" class="img-responsive center-block" alt="Canon Logo" width="200">
           <label>
-            <input id="rad-canon" type="radio" name="merk" value="canon" required>Canon
+            <input id="rad-canon" type="checkbox" name="merk[]" value="Canon">Canon
           </label>
         </div>
         <div class="radio">
-          <img src="../img/Nikon_2003.png" class="img-responsive center-block" alt="Nikon Logo" width="150" id="img-nikon">
+          <img src="../img/Nikon_2003.png" class="img-responsive center-block" alt="Nikon Logo" width="150">
           <label>
-            <input id="rad-nikon" type="radio" name="merk" value="nikon" required>Nikon
+            <input id="rad-nikon" type="checkbox" name="merk[]" value="Nikon">Nikon
           </label>
         </div>
         <div class="form-group">
           <input type="submit" class="btn btn-success">
         </div>
-      </form>    
-    </div>   
+      </form>
+    </div>
+
   </div>
 </body>
 </html>

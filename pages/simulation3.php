@@ -41,7 +41,6 @@ if($mysqli->connect_errno)
 							 $bobotharga = $_POST['bobotfitur'];
 						}
 						$sql = "SELECT * FROM alternatifnorm where merk=".$_SESSION['merk'];
-						echo $sql;
 						$res = $mysqli->query($sql);
 							if($res)
 					 		{
