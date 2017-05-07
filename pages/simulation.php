@@ -26,10 +26,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="#contact">Contact</a>
-          </li>
-          <li>
-            <a href="#login">Login</a>
+            <a href="login.html">Login</a>
           </li>
         </ul>
       </div>
@@ -72,15 +69,15 @@
       <form action="simulation2.php" method="post">
         <p>Pilih merk yang Anda inginkan :</p>
         <div class="radio">
-          <img src="../img/Canon_logo.png" class="img-responsive center-block" alt="Canon Logo" width="200">
-          <label>
-            <input id="rad-canon" type="checkbox" name="merk[]" value="Canon">Canon
+          <label class="form-check-label">
+            <img src="../img/Canon_logo.png" id="img-canon" class="img-responsive center-block" alt="Canon Logo" width="200">
+            <input id="rad-canon" type="checkbox" name="merk[]" value="Canon" class="form-check-input" >Canon
           </label>
         </div>
         <div class="radio">
-          <img src="../img/Nikon_2003.png" class="img-responsive center-block" alt="Nikon Logo" width="150">
-          <label>
-            <input id="rad-nikon" type="checkbox" name="merk[]" value="Nikon">Nikon
+          <label class="form-check-label">
+            <img src="../img/Nikon_2003.png" id="img-nikon" class="img-responsive center-block" alt="Nikon Logo" width="150">
+            <input id="rad-nikon" type="checkbox" name="merk[]" value="Nikon" class="form-check-input">Nikon
           </label>
         </div>
         <div class="form-group">
@@ -88,7 +85,6 @@
         </div>
       </form>
     </div>
-
   </div>
 </body>
 </html>

@@ -6,7 +6,6 @@
 	<link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/index.css">
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
 	<!-- Navigation -->
@@ -26,10 +25,7 @@
             <div class="collapse navbar-collapse" id="navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="/pages/contact.html">Contact</a>
-                    </li>
-                    <li>
-                        <a href="/pages/login.html">Login</a>
+                        <a href="pages/login.html">Login</a>
                     </li>
                 </ul>
             </div>
