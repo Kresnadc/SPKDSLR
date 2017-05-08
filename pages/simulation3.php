@@ -21,23 +21,23 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 
 	if(isset($_POST['bobotharga']))
 	{
-		$bobotharga = $_POST['bobotharga'];
+		$bobotharga = $_POST['bobotharga']/100;
 	}
 	if(isset($_POST['bobotsensor']))
 	{
-		$bobotharga = $_POST['bobotsensor'];
+		$bobotsensor = $_POST['bobotsensor']/100;
 	}
 	if(isset($_POST['bobotiso']))
 	{
-		$bobotharga = $_POST['bobotiso'];
+		$bobotiso = $_POST['bobotiso']/100;
 	}
 	if(isset($_POST['bobotres']))
 	{
-		$bobotharga = $_POST['bobotres'];
+		$bobotres = $_POST['bobotres']/100;
 	}
 	if(isset($_POST['bobotfitur']))
 	{
-		$bobotharga = $_POST['bobotfitur'];
+		$bobotfitur = $_POST['bobotfitur']/100;
 	}
 	$sql = "SELECT * FROM alternatifnorm where merk=".$_SESSION['merk'];
 	$res = $mysqli->query($sql);
@@ -49,8 +49,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 			$idTemp = $row['id'];
 			$arrMaxScore = count($maxScore);
 			$maxScore[$idTemp]=$temp;
+
 		}
 		arsort($maxScore);
+		echo var_dump($maxScore);
 	}
 }
 ?>
@@ -112,7 +114,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
 					<li>
-						<a href="login.html">Login</a>
+						<a href="#contact">Contact</a>
+					</li>
+					<li>
+						<a href="#login">Login</a>
 					</li>
 				</ul>
 			</div>
@@ -149,13 +154,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 		</div>
 		<hr>
 
-		<!-- Content -->
 		<div class="container">
 			<h1 class="text-center">The perfect DSLR for you</h1>
 			<?php
 			$int=0;
 			foreach ($maxScore as $key => $value) {
-				echo $key;
 				if($int<3)
 				{
 					$sql = "SELECT * FROM alternatif where id=".$key;
@@ -165,16 +168,17 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 						$row = $res->fetch_array();
 						echo '<div class="polaroid">';
 						echo '<p>'.$row['nama'].'</p>';
-						echo '<img src="../img/'.$row['gambar'].'" />';
+						echo '<img width="500px" src="../img/'.$row['gambar'].'" />';
 						echo '</div>';
+						echo '<div class="container text-center" style="margin-top:5px; margin-bottom:15px">';
 						echo '<a class="link-cam" href="'.$row['review'].'">Read specification</a>';
+						echo '</div>';
 					}
 				}
 				$int=$int+1;
 			}
 			?>
 		</div>
-		<!-- Content -->
 	</div>
 </body>
 </html>

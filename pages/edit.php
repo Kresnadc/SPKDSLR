@@ -81,7 +81,7 @@
 						JOIN	sensor ON alternatif.sensor=sensor.idSensor
 						JOIN	maxIso ON alternatif.maxIso=maxIso.idIso
 						JOIN		resolusiFoto ON alternatif.resolusiFoto=resolusifoto.idResolusiFoto
-						JOIN		resolusiVideo ON alternatif.resolusiVideo=resolusivideo.idResolusiVideo
+						JOIN		resollusiVideo ON alternatif.resolusiVideo=resollusivideo.idResolusiVideo
 						JOIN	fitur ON alternatif.fitur=fitur.idFitur
 						where id=$id";
 						$result=$mysqli->query($sql);

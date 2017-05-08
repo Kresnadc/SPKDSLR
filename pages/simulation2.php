@@ -2,29 +2,33 @@
 $mysqli = new mysqli("localhost","root","","spkdslr");
 if($mysqli->connect_errno)
 {
-	echo "Failed to connect to MySQL: (" . $mysqli->connect_errno.") ".$myslqi->connect_error;
+	echo "Failed to connect to MySQL: (" .
+			$mysqli->connect_errno.") ".$myslqi->connect_error;
 }
-session_start();
-if($_SERVER['REQUEST_METHOD'] == "POST")
-{
-  if(isset($_POST['merk']))
-  {
-    $selectedmerk = "";
-    foreach($_POST['merk'] as $merk){
-      $selectedmerk.=$merk.",";
-    }
-    $selectedmerk=rtrim($selectedmerk,", ");
-    $arrayMerk = explode(',', $selectedmerk);
-    if(sizeof($arrayMerk)==1)
-    {
-      $_SESSION['merk']="'".$arrayMerk[0]."'";
-    }
-    else{
-      $_SESSION['merk']="'".$arrayMerk[0]."' OR merk='".$arrayMerk[1]."'";
-    }
-    echo $_SESSION['merk'];
-  }
-}
+
+			session_start();
+			if($_SERVER['REQUEST_METHOD'] == "POST")
+			    {
+						if(isset($_POST['merk']))
+						{
+              $selectedmerk = "";
+              foreach($_POST['merk'] as $merk){
+                  $selectedmerk.=$merk.",";
+                }
+                $selectedmerk=rtrim($selectedmerk,", ");
+                $arrayMerk = explode(',', $selectedmerk);
+                if(sizeof($arrayMerk)==1)
+                {
+                  $_SESSION['merk']="'".$arrayMerk[0]."'";
+                }
+                else{
+                  $_SESSION['merk']="'".$arrayMerk[0]."' OR merk='".$arrayMerk[1]."'";
+                }
+                echo $_SESSION['merk'];
+						}
+
+			    }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -54,7 +58,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="login.html">Login</a>
+            <a href="#contact">Contact</a>
+          </li>
+          <li>
+            <a href="#login">Login</a>
           </li>
         </ul>
       </div>
@@ -67,7 +74,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
   <div class="container">
     <div class="step-progress" >
       <div class="row bs-wizard" style="border-bottom:0;">
-        <div class="col-xs-4 bs-wizard-step complete">
+      <div class="col-xs-4 bs-wizard-step complete">
           <div class="text-center bs-wizard-stepnum">Step 1</div>
           <div class="progress"><div class="progress-bar"></div></div>
           <a href="#" class="bs-wizard-dot"></a>
@@ -100,8 +107,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
        Resolusi Foto
        Resolusi Kamera
        Fitur
-     -->
-     <h3 class="text-center">Pilih bobot kriteria kamera DSLR sesuai keinginan anda</h5>
+       -->
+        <h3 class="text-center">Pilih bobot kriteria kamera DSLR sesuai keinginan anda</h5>
       <p class="bg-warning small">Note : Nilai total bobot kriteria harus 10!</p>
       <div class="form-group">
         <label for="harga">Harga</label>
@@ -233,16 +240,16 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
           <option value="100">100%</option>
         </select>
       </div>
-      <p>Total Nilai Bobot : <span id="total-bobot">0</span></p>
+        <p>Total Nilai Bobot : <span id="total-bobot">0</span></p>
 
-      <div class="form-group text-right">
-        <button type="button" class="btn btn-default" onclick="document.location.href = 'simulation.php';">Back</button>
-        <input type="submit" class="btn btn-default" id="sim2-submit" disabled>
-        <br>
-        <p><span id="warning" style="color:red;"></span></p>
-      </div>
-    </form>
+        <div class="form-group text-right">
+          <button type="button" class="btn btn-default" onclick="document.location.href = 'simulation.php';">Back</button>
+          <input type="submit" class="btn btn-default" id="sim2-submit" disabled>
+          <br>
+          <p><span id="warning" style="color:red;"></span></p>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
 </body>
 </html>

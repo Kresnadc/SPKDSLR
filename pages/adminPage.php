@@ -4,8 +4,6 @@
 	<title>Welcome Page</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../css/bootstrap.css">
-	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
 	<!-- Navigation -->
@@ -63,7 +61,7 @@
 						JOIN	sensor ON alternatif.sensor=sensor.idSensor
 						JOIN	maxIso ON alternatif.maxIso=maxIso.idIso
 						JOIN	resolusiFoto ON alternatif.resolusiFoto=resolusifoto.idResolusiFoto
-						JOIN	resolusiVideo ON alternatif.resolusiVideo=resolusivideo.idResolusiVideo
+						JOIN	resollusiVideo ON alternatif.resolusiVideo=resollusivideo.idResolusiVideo
 						JOIN	fitur ON alternatif.fitur=fitur.idFitur
 						ORDER BY id ";
 						$result=$mysqli->query($sql);
